@@ -21,7 +21,7 @@ h1 {
 <template>
   <div id="app">
   <h1>workout</h1>
-  <v-select @search="fethOptions" :options="options"></v-select>
+  <v-select @search="fethOptions" filterable="false" :options="options"></v-select>
 </div>
 </template>
 
