@@ -9,7 +9,7 @@
             
             <ul class="panel">
                 <p class="panel-heading">
-                    Players
+                    USERS
                 </p>
                 <li v-for="(p, i) in game.Players " :key="i" 
                     class="panel-block" :class="{ 'is-active': i == game.Dealer, 'has-text-primary': i == me.User_Id }">
@@ -20,9 +20,9 @@
                 </li>
             </ul>
 
-            <ul class="panel">
+            <ul class="panel" style="height: 220px; overflow: auto">
                 <p class="panel-heading">
-                    My Hand
+                    EXERCISES
                 </p>
                 <li v-for="(c, i) in My_Captions " :key="i" 
                     class="panel-block is-active"
@@ -37,13 +37,13 @@
                 <img    alt="Current Picture in Play" class="image is-fullwidth"
                         :src="game.Picture_In_Play" v-if="game.Picture_In_Play"  />
                 <div class="notification is-primary" v-else>
-                    Flip First Picture
+                    Random exercise
                 </div>
             </div>
 
             <ul class="panel">
                 <p class="panel-heading">
-                    Captions In Play
+                    Calculated calories
                 </p>
                 <li v-for="(c, i) in game.Captions_In_Play " :key="i" class="panel-block is-active" :class="{'has-background-warning': i == game.Caption_Chosen }">
                     <div class="is-expanded">{{c.text}}</div>
@@ -84,7 +84,7 @@ export default {
         },
         async submitCaption(caption, i){
             const response = await Game_Server.Submit_Caption(caption);
-            this.My_Captions.splice(i, 1);
+        
         },
         async chooseCaption(i){
             const response = await Game_Server.Choose_Caption(i);

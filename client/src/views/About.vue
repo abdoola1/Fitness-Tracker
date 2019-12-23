@@ -39,13 +39,14 @@
 
 <script>
 import { METS } from "../models/METS";
+import { Game_Server } from "../models/Game";
 
 export default {
    data: ()=> ({
-        METS: METS
+        METS: []
     }),
     methods:{
-
+      Get_METS();
 
     }
 }
