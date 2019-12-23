@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div>
      <div class="columns">
         <div class="column is-one-quarter">            
@@ -24,7 +24,7 @@
                   <br> 
                   {{time}}                 
                   </span>
-                  CALORIES time: <span id="MINUTES NEEDED"></span><br/>
+                  Minutes needed: <span id="MINUTES NEEDED"></span><br/>
                   <input type="button" value="Submit" onClick="writeValues(form)">
                 </form>       
                              
