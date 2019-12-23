@@ -32,12 +32,16 @@
             </ul>
 
         </div>
-        <div class="column">
+        <div class="column">        
             <div class="box is-clickable" @click="pictureClicked">
                 <img    alt="Current Picture in Play" class="image is-fullwidth"
                         :src="game.Picture_In_Play" v-if="game.Picture_In_Play"  />
                 <div class="notification is-primary" v-else>
                     Random exercise
+                </div>
+                <div>
+                    <button v-on:click ="caloriesburnt += 250/*randcal*/">complete random excercise</button>
+                    <p> so far you have burnt {{caloriesburnt}}</p>
                 </div>
             </div>
 
@@ -71,7 +75,9 @@ export default {
     data: ()=> ({
         game: {},
         My_Captions: [],
-        me: Game_Server.User
+        me: Game_Server.User,
+        caloriesburnt: 0
+
     }),
     async created(){
         this.My_Captions = await Game_Server.Get_Hand();
